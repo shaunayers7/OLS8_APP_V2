@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTasks, type TaskStatus, type TaskSquad } from '../../hooks/useTasks';
 import { useProfile } from '../../hooks/useProfile';
+import { supabaseConfigured } from '../../lib/supabase';
 import type { Task } from '../../hooks/useTasks';
 
 const STATUS_CONFIG: Record<TaskStatus, { label: string; cls: string; next: TaskStatus[] }> = {
@@ -53,7 +54,7 @@ export default function TaskBoard() {
   const active   = visibleTasks.filter(t => t.status === 'pending' || t.status === 'inplay');
   const resolved = visibleTasks.filter(t => t.status === 'completed' || t.status === 'cancelled' || t.status === 'failed');
 
-  if (!import.meta.env.VITE_SUPABASE_URL) {
+  if (!supabaseConfigured) {
     return (
       <div className="page-content">
         <div className="card card--amber" style={{ textAlign: 'center', padding: 24 }}>
