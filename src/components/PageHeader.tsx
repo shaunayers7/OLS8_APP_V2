@@ -1,9 +1,9 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 
 interface Props {
   icon: string;
   title: string;
-  right?: React.ReactNode;
+  right?: ReactNode;
 }
 
 export default function PageHeader({ icon, title, right }: Props) {

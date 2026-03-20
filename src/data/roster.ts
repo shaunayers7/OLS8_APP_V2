@@ -1,5 +1,3 @@
-export type MemberStatus = 'active' | 'inactive';
-
 export interface EmergencyContact {
   name: string;
   phone: string;

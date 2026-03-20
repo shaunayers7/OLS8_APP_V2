@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 interface PurchaseItem { id: string; label: string; qty: string; done: boolean; }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTasks, type TaskStatus, type TaskSquad } from '../../hooks/useTasks';
 import { useProfile } from '../../hooks/useProfile';
 import { supabaseConfigured } from '../../lib/supabase';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { DEFAULT_SCHEDULE, DAY_LABELS, type ScheduleItem } from '../../data/scheduleData';
 import { useProfile } from '../../hooks/useProfile';

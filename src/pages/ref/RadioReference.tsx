@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   FRS_CHANNELS,
   MURS_CHANNELS,
   OLS_CHANNELS,
   SPECTRE_CHANNELS,
   UV5R_PROG_STEPS,
-  RadioChannel,
+  type RadioChannel,
 } from '../../data/radioChannels';
 
 type Tab = 'spectre' | 'ols' | 'frs' | 'murs' | 'prog';

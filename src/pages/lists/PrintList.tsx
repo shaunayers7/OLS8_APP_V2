@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { DEFAULT_PRINT_ITEMS, PRINT_CATEGORIES, type PrintItem } from '../../data/printList';
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { DEFAULT_PACKING_ITEMS, PACKING_CATEGORIES, type PackingItem } from '../../data/packingList';
 

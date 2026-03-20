@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { allMembers } from '../data/roster';
 import type { Squad, Role, UserProfile } from '../hooks/useProfile';
 
@@ -11,7 +11,6 @@ export default function Onboarding({ onComplete }: Props) {
   const [name, setName] = useState('');
   const [squad, setSquad] = useState<Squad>('spectre');
   const [role, setRole] = useState<Role>('member');
-  const [step, setStep] = useState(0);
 
   const knownMember = allMembers.find(m => m.callsign === callsign.toUpperCase().trim());
 
@@ -55,8 +54,7 @@ export default function Onboarding({ onComplete }: Props) {
         SPECTRE SQUAD — JULY 2026
       </p>
 
-      {step === 0 && (
-        <div style={{ width: '100%', maxWidth: 360 }} className="fade-in">
+      <div style={{ width: '100%', maxWidth: 360 }} className="fade-in">
           <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', marginBottom: 18, textAlign: 'center' }}>
             Select your callsign or enter it manually
           </p>
@@ -124,7 +122,6 @@ export default function Onboarding({ onComplete }: Props) {
             ENTER SPECTRE
           </button>
         </div>
-      )}
     </div>
   );
 }

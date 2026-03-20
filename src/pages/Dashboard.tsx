@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProfile } from '../hooks/useProfile';
 
@@ -20,14 +20,14 @@ function useCountdown(target: Date) {
 }
 
 const TILES = [
-  { label: 'Lists',    icon: '☰',  path: '/lists',       color: 'var(--olive)' },
-  { label: 'Ops',      icon: '⚡', path: '/ops',         color: 'var(--amber)' },
-  { label: 'Team',     icon: '◉',  path: '/team',        color: 'var(--olive)' },
-  { label: 'Radio',    icon: '📡', path: '/ref/radio',   color: 'var(--olive)' },
-  { label: 'Rules',    icon: '📋', path: '/ref/rules',   color: 'var(--olive)' },
-  { label: 'FPS Calc', icon: '🔫', path: '/ref/fps',     color: 'var(--olive)' },
-  { label: 'Schedule', icon: '📅', path: '/ops/schedule',color: 'var(--olive)' },
-  { label: 'FCU Calc', icon: '#',  path: '/ref/fcu',     color: 'var(--olive)' },
+  { label: 'Lists',    icon: '☰',  path: '/lists',        color: 'var(--olive)' },
+  { label: 'Ops',      icon: '⚡', path: '/ops',          color: 'var(--amber)' },
+  { label: 'Team',     icon: '◉',  path: '/team',         color: 'var(--olive)' },
+  { label: 'Radio',    icon: '📡', path: '/ref#radio',    color: 'var(--olive)' },
+  { label: 'Rules',    icon: '📋', path: '/ref#rules',    color: 'var(--olive)' },
+  { label: 'FPS Calc', icon: '🔫', path: '/ref#fps',      color: 'var(--olive)' },
+  { label: 'Schedule', icon: '📅', path: '/ops#schedule', color: 'var(--olive)' },
+  { label: 'FCU Calc', icon: '#',  path: '/ref#fcu',      color: 'var(--olive)' },
 ];
 
 export default function Dashboard() {

@@ -5,7 +5,6 @@ export interface ScheduleItem {
   title: string;
   emoji: string;
   notes: string;
-  squad: 'all' | 'spectre' | 'subsquad';
 }
 
 export const DEFAULT_SCHEDULE: ScheduleItem[] = [

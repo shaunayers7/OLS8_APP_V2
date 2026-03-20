@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 interface TodoItem { id: string; label: string; done: boolean; created: number; }

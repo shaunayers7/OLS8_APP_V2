@@ -1,18 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { spectreSquad, subSquad, SquadMember } from '../../data/roster';
 
 const REVEAL_MS = 2500;
 
 type RevealState = { memberId: string; type: 'name' | 'emergency' } | null;
 
-function MemberCard({ member, onRevealStart }: { member: SquadMember; onRevealStart: (id: string, type: 'name' | 'emergency') => void }) {
+function MemberCard({ member }: { member: SquadMember }) {
   const [revealing, setRevealing] = useState<null | 'name' | 'emergency'>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function reveal(type: 'name' | 'emergency') {
     if (timerRef.current) clearTimeout(timerRef.current);
     setRevealing(type);
-    onRevealStart(member.id, type);
     timerRef.current = setTimeout(() => {
       setRevealing(null);
     }, REVEAL_MS);
@@ -51,9 +50,7 @@ function MemberCard({ member, onRevealStart }: { member: SquadMember; onRevealSt
         {/* Squad / role badge + emergency button */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
           <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-            {(member.role === 'leader' || member.role === 'Lead') && (
-              <span style={{ background: 'var(--amber)', color: '#000', fontFamily: 'var(--font-head)', fontSize: '0.6rem', padding: '2px 6px', borderRadius: 3, letterSpacing: '0.06em' }}>LEAD</span>
-            )}
+
             {member.has3DPrinter && (
               <span style={{ background: 'var(--olive)', color: '#fff', fontFamily: 'var(--font-head)', fontSize: '0.6rem', padding: '2px 6px', borderRadius: 3, letterSpacing: '0.06em' }}>3D🖨</span>
             )}
@@ -96,10 +93,6 @@ function MemberCard({ member, onRevealStart }: { member: SquadMember; onRevealSt
 }
 
 export default function Roster() {
-  function handleRevealStart(_id: string, _type: 'name' | 'emergency') {
-    // Could log analytics or trigger haptic feedback here
-  }
-
   return (
     <div className="page-content">
       <div className="section-head" style={{ marginBottom: 12 }}>

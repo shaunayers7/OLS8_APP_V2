@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { GUN_CLASSES, COMMON_BB_WEIGHTS, calculateJoules, fpsFromJoules } from '../../data/fpsData';
 
 export default function FPSCalculator() {

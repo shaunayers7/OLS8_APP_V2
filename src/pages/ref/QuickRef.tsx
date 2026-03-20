@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { GUN_CLASSES, calculateJoules } from '../../data/fpsData';
+import { useState } from 'react';
 import { UV5R_PROG_STEPS } from '../../data/radioChannels';
+import { GUN_CLASSES, calculateJoules } from '../../data/fpsData';
 
 type Tab = 'fps' | 'radio' | 'chrono' | 'signals';
 

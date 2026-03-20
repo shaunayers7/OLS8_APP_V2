@@ -5,8 +5,6 @@ export interface RadioChannel {
   rxFreq: string;
   tone?: string;
   notes?: string;
-  isSpectre?: boolean;
-  isOls?: boolean;
 }
 
 // Canadian FRS/GMRS channels (license-free in Canada up to 2W)

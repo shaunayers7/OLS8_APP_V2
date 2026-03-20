@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const REGISTERS = [
   { id: 'rof',    label: 'ROF',           desc: 'Rate of fire (0x00 – 0xFF = 0–255 cycles/sec)' },
