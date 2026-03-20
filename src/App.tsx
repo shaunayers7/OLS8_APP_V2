@@ -10,10 +10,10 @@ import Ref from './pages/Ref';
 import { useProfile } from './hooks/useProfile';
 
 export default function App() {
-  const { profile } = useProfile();
+  const { profile, completeOnboarding } = useProfile();
 
   if (!profile.onboarded) {
-    return <Onboarding />;
+    return <Onboarding onComplete={completeOnboarding} />;
   }
 
   return (

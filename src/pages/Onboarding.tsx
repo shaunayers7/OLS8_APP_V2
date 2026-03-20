@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { allMembers } from '../data/roster';
-import { useProfile } from '../hooks/useProfile';
-import type { Squad, Role } from '../hooks/useProfile';
+import type { Squad, Role, UserProfile } from '../hooks/useProfile';
 
-export default function Onboarding() {
-  const { completeOnboarding } = useProfile();
+interface Props {
+  onComplete: (data: Omit<UserProfile, 'onboarded'>) => void;
+}
+
+export default function Onboarding({ onComplete }: Props) {
   const [callsign, setCallsign] = useState('');
   const [name, setName] = useState('');
   const [squad, setSquad] = useState<Squad>('spectre');
@@ -24,7 +26,7 @@ export default function Onboarding() {
 
   const handleFinish = () => {
     if (!callsign.trim()) return;
-    completeOnboarding({
+    onComplete({
       callsign: callsign.toUpperCase().trim(),
       name: name.trim(),
       squad,
