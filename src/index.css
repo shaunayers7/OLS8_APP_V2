@@ -73,7 +73,7 @@ h3 { font-size: 0.95rem; color: var(--olive-lt); }
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 16px 16px calc(var(--nav-h) + var(--safe-b) + 16px);
+  padding: 16px 16px 16px;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -123,6 +123,7 @@ h3 { font-size: 0.95rem; color: var(--olive-lt); }
   position: fixed;
   bottom: calc(var(--nav-h) + var(--safe-b) + 16px);
   right: 16px;
+  --fab-right: 16px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -501,6 +502,31 @@ select option { background: var(--bg-card); }
   margin: 2px 0;
 }
 .timeline-note { font-size: 0.8rem; color: var(--text-dim); }
+
+/* ── Desktop: constrain to phone width ── */
+@media (min-width: 520px) {
+  body {
+    background: #050505;
+    display: flex;
+    justify-content: center;
+  }
+  #root {
+    width: 430px;
+    max-width: 430px;
+    min-width: 320px;
+    box-shadow: 0 0 0 1px #1e1e1e, 0 8px 60px rgba(0,0,0,0.95);
+  }
+  .fab {
+    right: calc(50vw - 215px + 16px);
+    bottom: calc(var(--nav-h) + 16px);
+  }
+  .overlay {
+    justify-content: center;
+  }
+  .sheet {
+    max-width: 430px;
+  }
+}
 
 /* ── Scrollbar styling ── */
 ::-webkit-scrollbar { width: 4px; }

@@ -14,15 +14,12 @@ export default function BottomNav() {
 
   return (
     <nav style={{
-      position: 'fixed',
-      bottom: 0,
-      left: 0,
-      right: 0,
       height: 'calc(var(--nav-h) + var(--safe-b))',
       paddingBottom: 'var(--safe-b)',
       background: '#080808',
       borderTop: '1px solid var(--border)',
       display: 'flex',
+      flexShrink: 0,
       zIndex: 50,
     }}>
       {TABS.map(tab => {
