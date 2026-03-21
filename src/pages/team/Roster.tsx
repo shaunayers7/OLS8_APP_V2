@@ -100,7 +100,7 @@ export default function Roster() {
         <span className="section-count">{spectreSquad.length}</span>
       </div>
       {spectreSquad.map(m => (
-        <MemberCard key={m.id} member={m} onRevealStart={handleRevealStart} />
+        <MemberCard key={m.id} member={m} />
       ))}
 
       <div className="section-head" style={{ marginBottom: 12, marginTop: 24 }}>
@@ -108,7 +108,7 @@ export default function Roster() {
         <span className="section-count">{subSquad.length}</span>
       </div>
       {subSquad.map(m => (
-        <MemberCard key={m.id} member={m} onRevealStart={handleRevealStart} />
+        <MemberCard key={m.id} member={m} />
       ))}
 
       <div className="card" style={{ marginTop: 16, textAlign: 'center', background: 'transparent', border: '1px solid var(--border)' }}>
